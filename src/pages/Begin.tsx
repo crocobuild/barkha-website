@@ -43,7 +43,6 @@ export default function Begin() {
         description="Book a complimentary 20-minute Discovery Call with Barkha Punjabi on WhatsApp. In person in Vashi, Navi Mumbai and Bandra, or online."
       />
       <PageHeader
-        tone="dark"
         label="Transform your life with Barkha Punjabi"
         title={
           <>
@@ -71,7 +70,7 @@ export default function Begin() {
                   {i === 0 ? <span className="t-label mt-10 text-firelight">Complimentary, 20 minutes</span> : <span className="mt-10" />}
                   <span className="t-title mt-3">{p.title}</span>
                   <span className="mt-4 text-mist/70">{p.body}</span>
-                  <span className={`mt-auto inline-flex items-center gap-2 pt-10 text-[0.95rem] ${i === 0 ? 'text-firelight' : ''}`}>
+                  <span className={`mt-auto inline-flex items-center gap-2 pt-10 text-[1.02rem] ${i === 0 ? 'text-firelight' : ''}`}>
                     <span className="link-draw">{p.cta} on WhatsApp</span> ↗
                   </span>
                 </a>
@@ -101,7 +100,7 @@ export default function Begin() {
                     Message on WhatsApp
                   </Button>
                 </div>
-                <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-ink/15 pt-8 text-[0.95rem]">
+                <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-ink/15 pt-8 text-[1.02rem]">
                   <div>
                     <dt className="t-label text-forest">Write</dt>
                     <dd className="mt-2 break-words">

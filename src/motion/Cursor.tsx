@@ -9,6 +9,8 @@ import { prefersReducedMotion } from '@/hooks/useReducedMotion'
  * [data-cursor] a separate disc carries the word ("Explore", "Read") —
  * its own element, centred on the pointer with flexbox, so the word is
  * never scaled or pushed off-centre whatever its length.
+ * Over [data-theme="dark"] sections (the tree photographs, the footer) it
+ * turns pale, so it never sinks into a dark background.
  */
 export function Cursor() {
   const dot = useRef<HTMLDivElement>(null)
@@ -38,6 +40,7 @@ export function Cursor() {
     const rx = gsap.quickTo([r, b], 'x', { duration: 0.6, ease: 'settle' })
     const ry = gsap.quickTo([r, b], 'y', { duration: 0.6, ease: 'settle' })
     let current: Element | null = null
+    let night = false
     let labelled = false
     let visible = false
 
@@ -51,6 +54,11 @@ export function Cursor() {
       dy(e.clientY)
       rx(e.clientX)
       ry(e.clientY)
+      const dark = (e.target as Element | null)?.closest('[data-theme]')?.getAttribute('data-theme') === 'dark'
+      if (dark !== night) {
+        night = dark
+        for (const el of [d, r, c]) el.toggleAttribute('data-night', dark)
+      }
       const target = (e.target as Element | null)?.closest('[data-cursor], a, button, [role="button"], summary') ?? null
       if (target === current) return
       current = target
@@ -85,16 +93,16 @@ export function Cursor() {
   if (!enabled) return null
   return (
     <>
-      <div ref={ring} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[100] size-9 rounded-full border border-forest/60" />
+      <div ref={ring} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[100] size-9 rounded-full border border-forest/60 transition-colors duration-300 data-[night]:border-paper/80 data-[night]:shadow-[0_0_0_1px_rgba(14,26,19,0.45),inset_0_0_0_1px_rgba(14,26,19,0.45)]" />
       <div ref={bubble} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[100]">
         <div
           ref={disc}
-          className="flex size-[5.5rem] items-center justify-center rounded-full bg-forest text-center text-[0.85rem] font-medium leading-none tracking-[0.01em] text-paper shadow-[0_0_0_1px_rgba(255,255,255,0.18)]"
+          className="flex size-[5.5rem] items-center justify-center rounded-full bg-forest text-center text-[0.9rem] font-medium leading-none tracking-[0.01em] text-paper shadow-[0_0_0_1px_rgba(255,255,255,0.18)] transition-colors duration-300 data-[night]:bg-paper data-[night]:text-deep"
         >
           {label}
         </div>
       </div>
-      <div ref={dot} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[100] size-1.5 rounded-full bg-forest" />
+      <div ref={dot} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[100] size-1.5 rounded-full bg-forest transition-colors duration-300 data-[night]:bg-paper data-[night]:shadow-[0_0_0_1px_rgba(14,26,19,0.5)]" />
     </>
   )
 }

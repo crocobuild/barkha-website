@@ -86,8 +86,8 @@ export function Nav() {
       <header ref={bar} className={`fixed inset-x-0 top-0 z-[60] transition-colors duration-700 ${open ? 'text-paper' : tone}`}>
         <div className="wrap flex h-[var(--nav-h)] items-center justify-between">
           <TLink to="/" label="Home" className="group flex items-baseline gap-2">
-            <span className="font-serif text-[1.35rem] leading-none tracking-[-0.02em]">Barkha</span>
-            <span className="font-serif text-[1.35rem] italic leading-none tracking-[-0.02em] opacity-80 transition-opacity group-hover:opacity-100">
+            <span className="font-serif text-[1.5rem] leading-none tracking-[-0.02em]">Barkha</span>
+            <span className="font-serif text-[1.5rem] italic leading-none tracking-[-0.02em] opacity-80 transition-opacity group-hover:opacity-100">
               Punjabi
             </span>
           </TLink>
@@ -96,7 +96,7 @@ export function Nav() {
             {nav.slice(1, 4).map((n) => {
               const active = pathname.startsWith(n.to)
               return (
-                <TLink key={n.to} to={n.to} label={n.label} className="group relative flex items-baseline gap-1.5 text-[0.9rem]">
+                <TLink key={n.to} to={n.to} label={n.label} className="group relative flex items-baseline gap-1.5 text-[1rem]">
                   <span className={`link-draw ${active ? 'bg-[length:100%_1px]' : ''}`}>{n.label}</span>
                 </TLink>
               )
@@ -109,11 +109,11 @@ export function Nav() {
                 <TLink
                   to="/begin"
                   label="Begin"
-                  className="inline-flex h-11 items-center gap-2.5 rounded-full border border-current/25 px-5 text-[0.88rem] transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-paper"
+                  className="inline-flex h-11 items-center gap-2.5 rounded-full border border-current/25 px-5 text-[0.95rem] transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-paper"
                 >
                   <span className="relative flex size-2">
-                    <span className="beat-ring absolute inset-0 rounded-full bg-forest" />
-                    <span className="relative size-2 rounded-full bg-forest" />
+                    <span className="beat-ring absolute inset-0 rounded-full bg-firelight" />
+                    <span className="relative size-2 rounded-full bg-firelight" />
                   </span>
                   Book a session
                 </TLink>
@@ -149,7 +149,7 @@ export function Nav() {
             </div>
           ))}
         </nav>
-        <div className="wrap relative mt-auto grid gap-6 pb-10 text-[0.95rem]">
+        <div className="wrap relative mt-auto grid gap-6 pb-10 text-[1.05rem]">
           <a data-fade href={wa(discoveryCallMessage)} className="inline-flex h-14 items-center justify-center rounded-full bg-firelight text-deep">
             Book a free Discovery Call
           </a>

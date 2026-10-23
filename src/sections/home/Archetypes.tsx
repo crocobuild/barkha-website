@@ -35,7 +35,7 @@ export function Archetypes() {
             {archetypes.map((a) => (
               <li key={a.name} className="border-t border-ink/12 py-6">
                 <h3 className="font-serif text-[1.35rem] leading-tight">{a.name}</h3>
-                <p className="mt-2 text-[0.95rem] text-ink/65">{a.line}</p>
+                <p className="mt-2 text-[1.02rem] text-ink/65">{a.line}</p>
               </li>
             ))}
           </ul>

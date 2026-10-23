@@ -45,7 +45,7 @@ export default function Journal() {
                   data-cursor="Read"
                   className="group grid gap-2 py-8 md:grid-cols-12 md:items-baseline md:gap-6"
                 >
-                  <span className="font-serif text-sm italic text-forest md:col-span-1">{String(i + 2).padStart(2, '0')}</span>
+                  <span className="font-serif text-[0.95rem] italic text-forest md:col-span-1">{String(i + 2).padStart(2, '0')}</span>
                   <span className="t-title md:col-span-6">
                     <span className="link-draw">{p.title}</span>
                   </span>

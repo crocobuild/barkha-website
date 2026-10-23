@@ -33,7 +33,7 @@ export function Button({ children, variant = 'primary', tone = 'light', classNam
 
   const inner = (
     <span
-      className={`group relative inline-flex h-14 items-center gap-3 overflow-hidden rounded-full px-7 text-[0.95rem] font-medium tracking-[-0.005em] transition-colors duration-500 ${skin} ${className}`}
+      className={`group relative inline-flex h-14 items-center gap-3 overflow-hidden rounded-full px-7 text-[1.02rem] font-medium tracking-[-0.005em] transition-colors duration-500 ${skin} ${className}`}
     >
       <span className="relative block overflow-hidden">
         <span className="block transition-transform duration-[900ms] ease-[var(--ease-settle)] group-hover:-translate-y-full">{children}</span>

@@ -48,8 +48,8 @@ export function HowICanHelp() {
                     </>
                   )}
                 </h3>
-                <p className="mt-3 text-[0.95rem] text-ink/65">{o.kicker}</p>
-                <span className="mt-auto pt-8 text-[0.9rem] text-forest underline decoration-forest/30 underline-offset-4 transition-colors group-hover:decoration-forest">
+                <p className="mt-3 text-[1.02rem] text-ink/65">{o.kicker}</p>
+                <span className="mt-auto pt-8 text-[0.98rem] text-forest underline decoration-forest/30 underline-offset-4 transition-colors group-hover:decoration-forest">
                   See details
                 </span>
               </TLink>

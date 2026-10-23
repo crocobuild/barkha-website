@@ -95,7 +95,7 @@ export function Elements() {
                 </span>
                 <h3 className="t-title">{e.name}</h3>
               </div>
-              <p className="mt-2 text-[0.95rem] text-paper/65">{e.caption}</p>
+              <p className="mt-2 text-[1.02rem] text-paper/65">{e.caption}</p>
             </li>
           ))}
         </ul>

@@ -3,8 +3,7 @@ import { gsap, ScrollTrigger, useGSAP } from '@/motion/gsap'
 import { onStrike } from '@/motion/clock'
 import { Reveal } from '@/motion/Reveal'
 import { Button } from '@/components/Button'
-import { Parallax } from '@/components/Parallax'
-import { Picture } from '@/components/Picture'
+import { TreeBackdrop } from '@/components/TreeBackdrop'
 import { site, wa, discoveryCallMessage } from '@/content/site'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 
@@ -36,10 +35,7 @@ export function Remember() {
 
   return (
     <section ref={root} data-theme="dark" className="relative isolate overflow-hidden bg-deep py-32 text-paper lg:py-48">
-      <Parallax amount={10} className="absolute inset-0 -z-10 opacity-70">
-        <Picture name="tree-sunset" alt="" sizes="100vw" className="size-full" imgClassName="object-[50%_40%]" />
-      </Parallax>
-      <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_45%,rgba(14,26,19,0.35),rgba(14,26,19,0.92)_75%)]" />
+      <TreeBackdrop />
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-[42%] -z-10 size-[min(90vw,46rem)] -translate-x-1/2 -translate-y-1/2">
         {[0, 1, 2].map((i) => (
           <span key={i} data-ring className="absolute inset-0 rounded-full border border-mist/40 opacity-0" />

@@ -42,24 +42,24 @@ export function Footer() {
 
   return (
     <footer ref={root} data-theme="dark" className="relative overflow-hidden bg-deep pt-24 text-paper lg:pt-32">
-      <div className="wrap grid grid-cols-2 gap-x-6 gap-y-12 text-[0.95rem] md:grid-cols-4">
+      <div className="wrap grid grid-cols-2 gap-x-6 gap-y-12 text-[1.15rem] md:grid-cols-4 lg:text-[1.25rem]">
         <div data-col>
-          <p className="t-label mb-5 text-paper/45">Visit</p>
-          <ul className="space-y-1.5">
+          <p className="t-label mb-5 text-[1.05rem] text-paper/60">Visit</p>
+          <ul className="space-y-2">
             {site.locations.map((l) => (
               <li key={l}>{l}</li>
             ))}
-            <li className="text-paper/55">& online, anywhere</li>
+            <li className="text-paper/70">& online, anywhere</li>
           </ul>
         </div>
         <div data-col>
-          <p className="t-label mb-5 text-paper/45">Hours</p>
+          <p className="t-label mb-5 text-[1.05rem] text-paper/60">Hours</p>
           <p>{site.hours.days}</p>
-          <p className="text-paper/55">{site.hours.note}</p>
+          <p className="text-paper/70">{site.hours.note}</p>
         </div>
         <div data-col>
-          <p className="t-label mb-5 text-paper/45">Connect</p>
-          <ul className="space-y-1.5">
+          <p className="t-label mb-5 text-[1.05rem] text-paper/60">Connect</p>
+          <ul className="space-y-2">
             <li>
               <a className="link-draw" href={wa()} target="_blank" rel="noreferrer">
                 WhatsApp
@@ -83,8 +83,8 @@ export function Footer() {
           </ul>
         </div>
         <div data-col>
-          <p className="t-label mb-5 text-paper/45">Wander</p>
-          <ul className="space-y-1.5">
+          <p className="t-label mb-5 text-[1.05rem] text-paper/60">Wander</p>
+          <ul className="space-y-2">
             {nav.map((n) => (
               <li key={n.to}>
                 <TLink to={n.to} label={n.label} className="link-draw">
@@ -96,13 +96,13 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="wrap mt-20 flex flex-col gap-6 border-t border-paper/10 pt-8 text-paper/60 md:flex-row md:items-end md:justify-between">
-        <p data-col className="max-w-md font-serif text-lg italic leading-snug text-paper/80">
+      <div className="wrap mt-20 flex flex-col gap-6 border-t border-paper/10 pt-8 text-paper/75 md:flex-row md:items-end md:justify-between">
+        <p data-col className="max-w-md font-serif text-xl italic leading-snug text-paper/85 md:text-2xl">
           ‘Our healing space is built on respect, confidentiality, and consent.’
         </p>
-        <button type="button" onClick={() => scrollToTarget(lenis, 0)} className="t-label flex items-center gap-3 self-start md:self-auto">
+        <button type="button" onClick={() => scrollToTarget(lenis, 0)} className="t-label flex items-center gap-3 self-start text-[1.05rem] md:self-auto">
           Back to the top
-          <span className="grid size-9 place-items-center rounded-full border border-paper/25">↑</span>
+          <span className="grid size-11 place-items-center rounded-full border border-paper/35">↑</span>
         </button>
       </div>
 
@@ -120,9 +120,9 @@ export function Footer() {
         ))}
       </p>
 
-      <div className="wrap flex items-center justify-between border-t border-paper/10 py-6 text-[0.8rem] text-paper/45">
+      <div className="wrap flex flex-wrap items-center justify-between gap-4 border-t border-paper/10 py-7 text-[1rem] text-paper/65">
         <span>© {new Date().getFullYear()} Barkha Punjabi — All rights reserved.</span>
-        <a href={site.instagram.url} target="_blank" rel="noreferrer" className="group flex items-center gap-2 transition-colors hover:text-forest">
+        <a href={site.instagram.url} target="_blank" rel="noreferrer" className="group flex items-center gap-2 transition-colors hover:text-firelight">
           <Bee className="size-6 transition-transform duration-700 ease-[var(--ease-settle)] group-hover:-translate-y-1 group-hover:rotate-[-8deg]" />
           <span className="hidden sm:inline">{site.instagram.handle}</span>
         </a>
